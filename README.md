@@ -83,8 +83,7 @@ The syntax is simple, just insert the variable
 in-between a set of curly braces {}.
 ```
 days = 365
-print(f"There are {days}
-in a year")
+print(f"There are {days} in a year")
 ```
 ## 3) M A T H S
 
