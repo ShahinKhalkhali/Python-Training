@@ -2,8 +2,6 @@
 
 Description: List of Python Commands
 
-Includes:
-
 ## 1) B A S I C S
 
 Print
