@@ -1,4 +1,4 @@
-# Python-Training
+# Python-Cheat-Sheet
 Practicing Python Fundamentals
 
 Includes:
