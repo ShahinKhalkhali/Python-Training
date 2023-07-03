@@ -5,6 +5,17 @@ Includes:
 
 1) B A S I C S
 
+Print
+Prints a string into the console.
+
+## print("Hello World")
+
+Input
+Prints a string into the console,
+and asks the user for a string input.
+
+## input("What's your name")
+
 2) D A T A T Y P E S
 
 3) M A T H S
