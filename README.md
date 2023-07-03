@@ -15,6 +15,14 @@ and asks the user for a string input.
 ```
 input("What's your name")
 ```
+Comments
+Adding a # symbol in font of text
+lets you make comments on a line of code.
+The computer will ignore your comments.
+```
+#This is a comment
+print("This is code")
+```
 ## 2) D A T A T Y P E S
 
 ## 3) M A T H S
