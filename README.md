@@ -42,7 +42,50 @@ my_age += 4
 ## 2) D A T A T Y P E S
 ### Integers
 Integers are whole numbers.
-
+```
+my_number = 354
+```
+### Floating Point Numbers
+Floats are numbers with decimal places.
+When you do a calculation that results in
+a fraction e.g. 4 ÷ 3 the result will always be
+a floating point number.
+```
+my_float = 3.14159
+```
+### Strings
+A string is just a string of characters.
+It should be surrounded by double quotes.
+```
+my_string = "Hello"
+```
+### String Concatenation
+You can add strings to string to create
+a new string. This is called concatenation.
+It results in a new string.
+```
+"Hello" + "Angela"
+#becomes "HelloAngela"
+```
+### Escaping a String
+Because the double quote is special, it
+denotes a string, if you want to use it in
+a string, you need to escape it with a "\"
+```
+speech = "She said: \"Hi\""
+print(speech)
+#prints: She said: "Hi"
+```
+### F-Strings
+You can insert a variable into a string
+using f-strings.
+The syntax is simple, just insert the variable
+in-between a set of curly braces {}.
+```
+days = 365
+print(f"There are {days}
+in a year")
+```
 ## 3) M A T H S
 
 ## 4) E R R O R S
