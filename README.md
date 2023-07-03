@@ -1,5 +1,6 @@
 # Python Cheat Sheet
-Practicing Python Fundamentals
+
+Description: List of Python Commands
 
 Includes:
 
