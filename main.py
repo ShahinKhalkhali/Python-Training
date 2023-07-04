@@ -1,11 +1,15 @@
-#########################################################
-###############      PYTHON TRAINING      ###############
-###############   SHAHIN K. & SHAYAN K.   ###############
-#########################################################
+###################################################################
+###############             PYTHON TRAINING         ###############
+###############   SHAHIN K. & SHAYAN K. & ARVIN K.  ###############
+###################################################################
 
 # Example 1 (Printing)
-print ("Day 1 - Python Print Function\nThe fucntion is declared like this\nprint('what to print')\n") # New line
+print ("Day 1 - Python Print Function\nThe function is declared like this\nprint('what to print')\n") # New line
 print ("Hello" + " " + "World") # Concatenation
-input ("What's your name: ") # print using input
+x = input ("Write your name: ") # print instruction and ask user to input string
+print ("You Entered: ", x)
 
 # Example 2
+days = 365
+print (f"There are {days} in a year")
+
