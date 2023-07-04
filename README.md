@@ -85,6 +85,22 @@ in-between a set of curly braces {}.
 days = 365
 print(f"There are {days} in a year")
 ```
+### Converting Data Types
+You can convert a variable from 1 data
+type to another.
+Converting to float:
+float()
+Converting to int:
+int()
+Converting to string:
+str()
+```
+n = 354
+new_n = float(n)
+print(new_n) #result 354.0
+```
+### Checking Data Types
+
 ## 3) M A T H S
 
 ## 4) E R R O R S
