@@ -353,8 +353,7 @@ while loops. You can loop through anything
 that is iterable. e.g. a range, a list, a dictionary
 or tuple.
 ```
-all_fruits = ["apple",
-    "banana", "orange"]
+all_fruits = ["apple", "banana", "orange"]
 for fruit in all_fruits:
     print(fruit)
 ```
@@ -416,8 +415,7 @@ list1 += list2
 If you just want to add a single item to a
 list, you need to use the .append() method.
 ```
-all_fruits = ["apple",
-    "banana", "orange"]
+all_fruits = ["apple", "banana", "orange"]
 all_fruits.append("pear")
 ```
 ### List Index
