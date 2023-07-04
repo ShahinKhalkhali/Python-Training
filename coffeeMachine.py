@@ -21,22 +21,31 @@
 capacityWater = 1000
 capacityCoffee = 1000
 capacityMilk = 1000
-capacityMoney = 0
+capacityQuarters = 0
+capacityDimes = 0
+capacityNickles = 0
+capacityPennies = 0
+capacityTotal = 0
 capacityChange = 0
 
-while capacityWater > 0 and capacityCoffee > 0 and capacityMilk > 0:
+while capacityWater >= 0 and capacityCoffee >= 0 and capacityMilk >= 0:
     # Input
     coffeeType = input ("What would you like? (Espresso/Latte/Cappuccino): ")
-    capacityMoney = float(input("Insert Money: "))
+    capacityQuarters = float(input("Insert Quarters: "))
+    capacityDimes = float(input("Insert Dimes: "))
+    capacityNickles = float(input("Insert Nickles: "))
+    capacityPennies = float(input("Insert Pennies: "))
 
-    if capacityMoney >= 1.5:
+    capacityTotal = float(capacityQuarters) + float(capacityDimes) + float(capacityNickles) + float(capacityPennies)
+
+    if capacityTotal >= 1.5:
         if coffeeType == "Latte":
             capacityWater -= 50
             capacityCoffee -= 18
-            capacityChange = capacityMoney - 1.5
+            capacityChange = capacityTotal - 1.5
             print("Distributing latte\n")
 
-    if capacityMoney >= 2.5:
+    if capacityTotal >= 2.5:
         if coffeeType == "Espresso":
             capacityWater -= 200
             capacityCoffee -= 24
@@ -44,13 +53,22 @@ while capacityWater > 0 and capacityCoffee > 0 and capacityMilk > 0:
             capacityChange = capacityMoney - 2.5
             print("Distributing espresso\n")
 
-    if capacityMoney >= 3.0:
+    if capacityTotal >= 3.0:
         if coffeeType == "Cappuccino":
             capacityWater -= 250
             capacityCoffee -= 24
             capacityMilk -= 100
             capacityChange = capacityMoney - 3.0
             print("Distributing cappuccino\n")
+
+    if capacityWater <= 0:
+        print("Sorry there is not enough water.")
+    
+    if capacityCoffee <= 0:
+        print("Sorry there is not enough coffee.")
+
+    if capacityMilk <= 0:
+        print("Sorry there is not enough milk.")
 
     # Feedback
     print ("Money returned: " + str(capacityChange) + "$\n")
