@@ -12,6 +12,3 @@ print ("You Entered: ", x)
 # Example 2
 days = 365
 print (f"There are {days} in a year")
-
-
-
