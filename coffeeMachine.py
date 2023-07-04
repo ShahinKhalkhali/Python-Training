@@ -16,7 +16,7 @@
 
 coffeeType = input ("What would you like? (Espresso/Latte/Cappuccino): ")
 
-#TODO ADD LOOP CONDITION UNTIL WATER/MILK/COFFEE/MONEY MEETS CONDITIONS
+#TODO ADD LOOP CONDITION WHILE WATER/MILK/COFFEE/MONEY MEETS CONDITIONS
 
 if coffeeType == "Latte":
     print("Distributing latte")
