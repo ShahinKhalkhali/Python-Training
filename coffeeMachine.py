@@ -30,15 +30,18 @@ capacityChange = 0
 responseFlag = True     # ****  ADD FLAG SO THAT WE CAN DECIDE WHEN TO RESET THE LOOP (APPLICABLE   ****
                         # ****  IN ANY SITUATION BUT ANYWHERE) IN THE MAIN CODE.                    ****
 
+# The "Resetting of the program" is explained as the following: while true, the loop will continue. 
 while responseFlag:
+    # When inner loop breaks 
     responseFlag = False # **** VERY IMPORTANT TO MAKE SURE THAT FLAG RESETS AFTER EACH ITERATION ****
     while (capacityWater >= 0 and capacityCoffee >= 0 and capacityMilk >= 0):
         # Input
         coffeeType = input ("What would you like? (Espresso/Latte/Cappuccino): ").lower()
 
-        if coffeeType != ("latte" or "espresso" or "cappuccino"):
-            print("Please enter a valid drink!")
-            responseFlag = True
+        # Exceptions for flag to restart program                                                                                                    # TODO Review this!
+        if coffeeType != "latte" and coffeeType != "espresso" and coffeeType != "cappuccino" and coffeeType != "report" and coffeeType != "off":    # "and" is the correct statement for this exception because
+            print("Please enter a valid drink!")                                                                                                    # condition will never be false since coffeeType cannot be 
+            responseFlag = True                                                                                                                     # 2 different strings at the same time.
             break
 
         # Machine Resource Notice
