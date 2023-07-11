@@ -27,71 +27,82 @@ capacityNickles = 0.05
 capacityPennies = 0.01
 capacityTotal = 0
 capacityChange = 0
+responseFlag = True     # ****  ADD FLAG SO THAT WE CAN DECIDE WHEN TO RESET THE LOOP (APPLICABLE   ****
+                        # ****  IN ANY SITUATION BUT ANYWHERE) IN THE MAIN CODE.                    ****
 
-while capacityWater >= 0 and capacityCoffee >= 0 and capacityMilk >= 0:
-    # Input
-    coffeeType = input ("What would you like? (Espresso/Latte/Cappuccino): ").lower()
+while responseFlag:
+    responseFlag = False # **** VERY IMPORTANT TO MAKE SURE THAT FLAG RESETS AFTER EACH ITERATION ****
+    while (capacityWater >= 0 and capacityCoffee >= 0 and capacityMilk >= 0):
+        # Input
+        coffeeType = input ("What would you like? (Espresso/Latte/Cappuccino): ").lower()
 
-    # Machine Resource Notice
-    if capacityWater <= 0:
-        print("Sorry there is not enough water.")
-        quit()
-    
-    if capacityCoffee <= 0:
-        print("Sorry there is not enough coffee.")
-        quit()
+        if coffeeType != ("latte" or "espresso" or "cappuccino"):
+            print("Please enter a valid drink!")
+            responseFlag = True
+            break
 
-    if capacityMilk <= 0:
-        print("Sorry there is not enough milk.")
-        quit()
+        # Machine Resource Notice
+        if capacityWater <= 0:
+            print("Sorry there is not enough water.")
+            quit()
+        
+        if capacityCoffee <= 0:
+            print("Sorry there is not enough coffee.")
+            quit()
 
-    if coffeeType == "off":
-        print("Coffee machine will now turn off.")
-        quit()
+        if capacityMilk <= 0:
+            print("Sorry there is not enough milk.")
+            quit()
 
-    elif coffeeType == "report":
-    # Feedback Report
-        print ("\nMoney Obtained: " + str(capacityTotal) + "$\n")
-        print ("Resource Capacity")
-        print ("Water left: " + str(capacityWater) + "ml")
-        print ("Coffee left: " + str(capacityCoffee) + "g")
-        print ("Milk left: " + str(capacityMilk) + "ml\n")
+        if coffeeType == "off":
+            print("Coffee machine will now turn off.")
+            quit()
 
-    capacityQuarters *= int(input("Insert number of Quarters: "))
-    capacityDimes *= int(input("Insert number of Dimes: "))
-    capacityNickles *= int(input("Insert number of Nickles: "))
-    capacityPennies *= int(input("Insert number of Pennies: "))
+        elif coffeeType == "report":
+        # Feedback Report
+            print ("\nMoney Obtained: " + str(capacityTotal) + "$\n")
+            print ("Resource Capacity")
+            print ("Water left: " + str(capacityWater) + "ml")
+            print ("Coffee left: " + str(capacityCoffee) + "g")
+            print ("Milk left: " + str(capacityMilk) + "ml\n")
+            responseFlag = True
+            break
 
-    capacityTotal = int(capacityQuarters) + int(capacityDimes) + int(capacityNickles) + int(capacityPennies)
+        capacityQuarters *= int(input("Insert number of Quarters: "))
+        capacityDimes *= int(input("Insert number of Dimes: "))
+        capacityNickles *= int(input("Insert number of Nickles: "))
+        capacityPennies *= int(input("Insert number of Pennies: "))
 
-    if (coffeeType == "latte"):
-        capacityChange = capacityTotal - 1.5
-        if capacityChange <= 0:
-            print("Sorry that's not enough money.")
-        else:
-            print("Distributing latte\n")
-            print("Here is your change: $" + str(capacityChange))
-            capacityWater -= 50
-            capacityCoffee -= 18
+        capacityTotal = int(capacityQuarters) + int(capacityDimes) + int(capacityNickles) + int(capacityPennies)
 
-    elif (coffeeType == "espresso"):
-        capacityChange = capacityTotal - 2.5
-        if capacityChange <= 0:
-            print("Sorry that's not enough money.")
-        else:
-            print("Distributing espresso\n")
-            print("Here is your change: $" + str(capacityChange))
-            capacityWater -= 200
-            capacityCoffee -= 24
-            capacityMilk -= 150
+        if (coffeeType == "latte"):
+            capacityChange = capacityTotal - 1.5
+            if capacityChange <= 0:
+                print("Sorry that's not enough money.")
+            else:
+                print("Distributing latte\n")
+                print("Here is your change: $" + str(capacityChange))
+                capacityWater -= 50
+                capacityCoffee -= 18
 
-    elif (coffeeType == "cappuccino"):
-        capacityChange = capacityTotal - 3.0
-        if capacityChange <= 0:
-            print("Sorry that's not enough money.")
-        else:
-            print("Distributing cappuccino\n")
-            print("Here is your change: $" + str(capacityChange))
-            capacityWater -= 250
-            capacityCoffee -= 24
-            capacityMilk -= 100
+        elif (coffeeType == "espresso"):
+            capacityChange = capacityTotal - 2.5
+            if capacityChange <= 0:
+                print("Sorry that's not enough money.")
+            else:
+                print("Distributing espresso\n")
+                print("Here is your change: $" + str(capacityChange))
+                capacityWater -= 200
+                capacityCoffee -= 24
+                capacityMilk -= 150
+
+        elif (coffeeType == "cappuccino"):
+            capacityChange = capacityTotal - 3.0
+            if capacityChange <= 0:
+                print("Sorry that's not enough money.")
+            else:
+                print("Distributing cappuccino\n")
+                print("Here is your change: $" + str(capacityChange))
+                capacityWater -= 250
+                capacityCoffee -= 24
+                capacityMilk -= 100
