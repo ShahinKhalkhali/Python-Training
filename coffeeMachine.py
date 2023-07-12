@@ -71,29 +71,29 @@ while responseFlag:
             responseFlag = True
             break
 
-        capacityQuarters *= int(input("Insert number of Quarters: "))
-        capacityDimes *= int(input("Insert number of Dimes: "))
-        capacityNickles *= int(input("Insert number of Nickles: "))
-        capacityPennies *= int(input("Insert number of Pennies: "))
+        capacityQuarters *= float(input("Insert number of Quarters: "))
+        capacityDimes *= float(input("Insert number of Dimes: "))
+        capacityNickles *= float(input("Insert number of Nickles: "))
+        capacityPennies *= float(input("Insert number of Pennies: "))
 
-        capacityTotal = int(capacityQuarters) + int(capacityDimes) + int(capacityNickles) + int(capacityPennies)
+        capacityTotal = float(capacityQuarters) + float(capacityDimes) + float(capacityNickles) + float(capacityPennies)
 
-        if (coffeeType == "latte"):
+        if (coffeeType == "espresso"):
             capacityChange = capacityTotal - 1.5
             if capacityChange <= 0:
                 print("Sorry that's not enough money.")
             else:
-                print("Distributing latte\n")
+                print("Distributing espresso\n")
                 print("Here is your change: $" + str(capacityChange))
                 capacityWater -= 50
                 capacityCoffee -= 18
 
-        elif (coffeeType == "espresso"):
+        elif (coffeeType == "latte"):
             capacityChange = capacityTotal - 2.5
             if capacityChange <= 0:
                 print("Sorry that's not enough money.")
             else:
-                print("Distributing espresso\n")
+                print("Distributing latte\n")
                 print("Here is your change: $" + str(capacityChange))
                 capacityWater -= 200
                 capacityCoffee -= 24
