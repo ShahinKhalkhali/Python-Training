@@ -36,7 +36,7 @@ while responseFlag:
     responseFlag = False # **** VERY IMPORTANT TO MAKE SURE THAT FLAG RESETS AFTER EACH ITERATION ****
     while (capacityWater >= 0 and capacityCoffee >= 0 and capacityMilk >= 0):
         # Input
-        coffeeType = input ("What would you like? (Espresso/Latte/Cappuccino): ").lower()
+        coffeeType = input ("What would you like? (Espresso/Latte/Cappuccino): ").lower() # .lower() forces all input to be lower case.
 
         # Exceptions for flag to restart program                                                                                                    # TODO Review this!
         if coffeeType != "latte" and coffeeType != "espresso" and coffeeType != "cappuccino" and coffeeType != "report" and coffeeType != "off":    # "and" is the correct statement for this exception because
