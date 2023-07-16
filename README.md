@@ -579,7 +579,7 @@ class Car:
     def __init__(self, name):
         self.name = "Jimmy"
 ```
-Class Inheritance
+### Class Inheritance
 When you create a new class, you can
 inherit the methods and properties
 of another class.
