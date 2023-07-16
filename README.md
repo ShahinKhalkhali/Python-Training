@@ -443,7 +443,157 @@ letters[1:3]
 #Result: ["b", "c"]
 ```
 ## 9) B U I L T  I N  F U N C T I O N S
-
+### Range
+Often you will want to generate a range
+of numbers. You can specify the start, end
+and step.
+Start is included, but end is excluded:
+start <= range < end
+```
+# range(start, end, step)
+for i in range(6, 0, -2):
+    print(i)
+# result: 6, 4, 2
+# 0 is not included.
+```
+### Randomisation
+The random functions come from the
+random module which needs to be
+imported.
+In this case, the start and end are both
+included
+start <= randint <= end
+import random
+```
+# randint(start, end)
+n = random.randint(2, 5)
+#n can be 2, 3, 4 or 5.
+```
+### Round
+This does a mathematical round.
+So 3.1 becomes 3, 4.5 becomes 5
+and 5.8 becomes 6.
+```
+round(4.6)
+# result 5
+```
+### abs
+This returns the absolute value.
+Basically removing any -ve signs.
+```
+abs(-4.6)
+# result 4.6
+```
 ## 10) M O D U L E S
-
+### Importing
+Some modules are pre-installed with python
+e.g. random/datetime
+Other modules need to be installed from
+pypi.org
+```
+import random
+n = random.randint(3, 10)
+```
+### Aliasing
+You can use the as keyword to give
+your module a different name.
+```
+import random as r
+n = r.randint(1, 5)
+```
+### Importing from modules
+You can import a specific thing from a
+module. e.g. a function/class/constant
+You do this with the from keyword.
+It can save you from having to type the same
+thing many times.
+```
+from random import randint
+n = randint(1, 5)
+```
+### Importing Everything
+You can use the wildcard (*) to import
+everything from a module. Beware, this
+usually reduces code readability.
+```
+from random import *
+list = [1, 2, 3]
+choice(list)
+# More readable/understood
+#random.choice(list)
+```
 ## 11) C L A S S E S  &  O B J E C T S
+### Creating a Python Class
+You create a class using the class keyword.
+Note, class names in Python are PascalCased.
+So to create an empty class 👉
+```
+class MyClass:
+    #define class
+```
+### Creating an Object from a Class
+You can create a new instance of an object
+by using the class name + ()
+```
+class Car:
+    pass
+my_toyota = Car()
+```
+### Class Methods
+You can create a function that belongs
+to a class, this is known as a method.
+```
+class Car:
+    def drive(self):
+        print("move")
+my_honda = Car()
+my_honda.drive()
+```
+### Class Variables
+You can create a varaiable in a class.
+The value of the variable will be available
+to all objects created from the class.
+```
+class Car:
+    colour = "black"
+car1 = Car()
+print(car1.colour) #black
+```
+### The __init__ method
+The init method is called every time a new
+object is created from the class.
+```
+class Car:
+    def __init__(self):
+        print("Building car")
+my_toyota = Car()
+#You will see "building car"
+#printed.
+```
+### Class Properties
+You can create a variable in the init() of
+a class so that all objects created from the
+class has access to that variable.
+```
+class Car:
+    def __init__(self, name):
+        self.name = "Jimmy"
+```
+Class Inheritance
+When you create a new class, you can
+inherit the methods and properties
+of another class.
+```
+class Animal:
+    def breathe(self):
+        print("breathing")
+class Fish(Animal):
+    def breathe(self):
+        super().breathe()
+        print("underwater")
+nemo = Fish()
+nemo.breathe()
+#Result:
+#breathing
+#underwater
+```
