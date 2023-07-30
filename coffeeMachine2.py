@@ -17,6 +17,9 @@
 #                               100ml Milk
 #                               3.00 $
 
+# Variable
+profit = 0
+
 # Dictionnary for menu of coffees
 MENU = {                            # To call a key from the dictionnary you need to call the MENU Dictionnary
     "espresso": {                   # and access the key. 
@@ -53,29 +56,50 @@ resources = {
 isOn = True
 
 def reduceResources(coffeeType):
-
     if (coffeeType == "latte"):
-        print("Reducing latte resources")
-        for item in MENU.get('latte').get('ingredients'):
-            #TODO Figure out how to obtain values
+        for out_key, in_dict in MENU.items():
+            if (out_key == "latte"):
 
+                print(f"Outer key: {out_key}")
+                for in_key, value in in_dict.items():
+                    print(f"Inner key: {in_key}, Value: {value}")
+                    
+                    #TODO REDUCE RESOURCES
+                    
+
+    if (coffeeType == "cappuccino"):
+        for out_key, in_dict in MENU.items():
+            if (out_key == "cappuccino"):
+                print(f"Outer key: {out_key}")
+                for in_key, value in in_dict.items():
+                    print(f"Inner key: {in_key}, Value: {value}")
+
+                    #TODO REDUCE RESOURCES
+
+    if (coffeeType == "espresso"):
+        for out_key, in_dict in MENU.items():
+            if (out_key == "espresso"):
+                print(f"Outer key: {out_key}")
+                for in_key, value in in_dict.items():
+                    print(f"Inner key: {in_key}, Value: {value}")
+
+                    #TODO REDUCE RESOURCES
 
 while isOn:
-    
+
     coffeeType = input("What would you like? (Espresso/Latte/Cappuccino): ").lower()
 
     if (coffeeType == "off"):
         isOn = False
 
     elif (coffeeType == "report"):
-            #TODO Obtain the updated resource list
-            print ("\nMoney Obtained: " + str(capacityTotal) + "$\n")
-            print ("Resource Capacity")
-            print ("Water left: " + str(capacityWater) + "ml")
-            print ("Coffee left: " + str(capacityCoffee) + "g")
-            print ("Milk left: " + str(capacityMilk) + "ml\n")
-            isOn = True
-            break
+        #TODO Obtain the updated resource list
+        print (f"\nMoney Obtained\nCAD: {profit}$\n")
+        print ("Resource Capacity")
+        print (f"Water left: {resources['water']}ml")
+        print (f"Coffee left: {resources['coffee']} g")
+        print (f"Milk left: {resources['milk']} ml\n")
+        isOn = True
 
     else:
         reduceResources(coffeeType)
