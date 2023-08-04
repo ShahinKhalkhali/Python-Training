@@ -56,34 +56,20 @@ resources = {
 isOn = True
 
 def reduceResources(coffeeType):
-    if (coffeeType == "latte"):
-        for out_key, in_dict in MENU.items():
-            if (out_key == "latte"):
-
-                print(f"Outer key: {out_key}")
-                for in_key, value in in_dict.items():
-                    print(f"Inner key: {in_key}, Value: {value}")
-                    
-                    #TODO REDUCE RESOURCES
-                    
-
-    if (coffeeType == "cappuccino"):
-        for out_key, in_dict in MENU.items():
-            if (out_key == "cappuccino"):
-                print(f"Outer key: {out_key}")
-                for in_key, value in in_dict.items():
-                    print(f"Inner key: {in_key}, Value: {value}")
-
-                    #TODO REDUCE RESOURCES
-
-    if (coffeeType == "espresso"):
-        for out_key, in_dict in MENU.items():
-            if (out_key == "espresso"):
-                print(f"Outer key: {out_key}")
-                for in_key, value in in_dict.items():
-                    print(f"Inner key: {in_key}, Value: {value}")
-
-                    #TODO REDUCE RESOURCES
+    # Check if the coffeeType exists in the MENU
+    if coffeeType in MENU:
+        # Iterate over the ingredients of the coffeeType
+        for ingredient, amount in MENU[coffeeType]['ingredients'].items():
+            # Check if there is enough of each ingredient in totalResources
+            if resources[ingredient] >= amount:
+                resources[ingredient] -= amount
+            else:
+                print(f"Sorry, there is not enough {ingredient}.")
+                return False
+        return True
+    else:
+        print(f"Sorry, we do not serve {coffeeType}.")
+        return False
 
 while isOn:
 
