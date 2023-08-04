@@ -1,4 +1,4 @@
-# Python Cheat Sheet By Shahin K. & Shayan K.
+# Python Cheat Sheet By Shahin K.
 
 Description: List of Python Commands
 
