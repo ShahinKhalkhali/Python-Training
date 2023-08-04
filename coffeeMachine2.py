@@ -69,6 +69,8 @@ def addMoney(coffeeType):
         penniesCapacity = input("Number of Pennies: ")
         totalCapacity = quartersCapacity + dimesCapacity + nicklesCapacity + penniesCapacity
 
+
+    #TODO FIX CHANGE DISTRIBUTION AND PROFIT EARNED
     if (coffeeType == "latte"):
         changeCost = totalCapacity - moneyCost
         if changeCost <= 0:
