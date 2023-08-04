@@ -17,8 +17,11 @@
 #                               100ml Milk
 #                               3.00 $
 
-# Variable
+# Initialize Variables
 profit = 0
+moneyCost = 0
+totalCapacity = 0
+coffeeType = "N/A"
 
 # Dictionnary for menu of coffees
 MENU = {                            # To call a key from the dictionnary you need to call the MENU Dictionnary
@@ -55,6 +58,31 @@ resources = {
 
 isOn = True
 
+def addMoney(coffeeType):
+
+        moneyCost = float.MENU[coffeeType]['cost'].items()
+
+        print("For your " + coffeeType + ", please insert $" + moneyCost)
+        quartersCapacity = input("Number of Quarters: ")
+        dimesCapacity = input("Number of Dimes: ")
+        nicklesCapacity = input("Number of Nickles: ")
+        penniesCapacity = input("Number of Pennies: ")
+        totalCapacity = quartersCapacity + dimesCapacity + nicklesCapacity + penniesCapacity
+
+    if (coffeeType == "latte"):
+        changeCost = totalCapacity - moneyCost
+        if changeCost <= 0:
+            print("Sorry that's not enough money.")
+        else:
+            print("Distributing " + coffeeType)
+            profit += totalCapacity - changeCost
+            print("Here is your change: " + changeCost)
+
+    if (coffeeType == "cappuccino"):
+
+    if (coffeeType == "espresso"):
+
+
 def reduceResources(coffeeType):
     # Check if the coffeeType exists in the MENU
     if coffeeType in MENU:
@@ -88,4 +116,5 @@ while isOn:
         isOn = True
 
     else:
+        addMoney(coffeeType)
         reduceResources(coffeeType)

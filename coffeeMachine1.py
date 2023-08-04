@@ -17,16 +17,12 @@
 #                               100ml Milk
 #                               3.00 $
 
-# Variables
+# Global Variables
+profit = 0
 capacityWater = 1000
 capacityCoffee = 1000
 capacityMilk = 1000
-capacityQuarters = 0.25
-capacityDimes = 0.10
-capacityNickles = 0.05
-capacityPennies = 0.01
-capacityTotal = 0
-capacityChange = 0
+
 responseFlag = True     # ****  ADD FLAG SO THAT WE CAN DECIDE WHEN TO RESET THE LOOP (APPLICABLE   ****
                         # ****  IN ANY SITUATION BUT ANYWHERE) IN THE MAIN CODE.                    ****
 
@@ -35,6 +31,15 @@ while responseFlag:
     # When inner loop breaks 
     responseFlag = False # **** VERY IMPORTANT TO MAKE SURE THAT FLAG RESETS AFTER EACH ITERATION ****
     while (capacityWater >= 0 and capacityCoffee >= 0 and capacityMilk >= 0):
+
+        # Reset all inputs to original values
+        capacityQuarters = 0.25
+        capacityDimes = 0.10
+        capacityNickles = 0.05
+        capacityPennies = 0.01
+        capacityTotal = 0
+        capacityChange = 0
+
         # Input
         coffeeType = input ("What would you like? (Espresso/Latte/Cappuccino): ").lower() # .lower() forces all input to be lower case.
 
@@ -63,7 +68,7 @@ while responseFlag:
 
         elif coffeeType == "report":
         # Feedback Report
-            print ("\nMoney Obtained: " + str(capacityTotal) + "$\n")
+            print ("\nMoney Obtained: " + str(profit) + "$\n")
             print ("Resource Capacity")
             print ("Water left: " + str(capacityWater) + "ml")
             print ("Coffee left: " + str(capacityCoffee) + "g")
@@ -76,6 +81,7 @@ while responseFlag:
         capacityNickles *= float(input("Insert number of Nickles: "))
         capacityPennies *= float(input("Insert number of Pennies: "))
 
+        capacityTotal = 0
         capacityTotal = float(capacityQuarters) + float(capacityDimes) + float(capacityNickles) + float(capacityPennies)
 
         if (coffeeType == "espresso"):
@@ -83,6 +89,7 @@ while responseFlag:
             if capacityChange <= 0:
                 print("Sorry that's not enough money.")
             else:
+                profit += 1.5
                 print("Distributing espresso\n")
                 print("Here is your change: $" + str(capacityChange))
                 capacityWater -= 50
@@ -93,6 +100,7 @@ while responseFlag:
             if capacityChange <= 0:
                 print("Sorry that's not enough money.")
             else:
+                profit += 2.5
                 print("Distributing latte\n")
                 print("Here is your change: $" + str(capacityChange))
                 capacityWater -= 200
@@ -104,6 +112,7 @@ while responseFlag:
             if capacityChange <= 0:
                 print("Sorry that's not enough money.")
             else:
+                profit += 3
                 print("Distributing cappuccino\n")
                 print("Here is your change: $" + str(capacityChange))
                 capacityWater -= 250
