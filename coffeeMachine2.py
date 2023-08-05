@@ -61,6 +61,8 @@ isOn = True
 
 def addMoney(coffeeType):
 
+    global profit
+
     moneyCost = str(MENU[coffeeType]['cost'])
 
     # Reset values
@@ -70,7 +72,6 @@ def addMoney(coffeeType):
     penniesCapacity = 0.01
     totalCapacity = 0
     capacityChange = 0
-    profit = 0
 
     print("For your " + coffeeType + ", please insert $" + moneyCost)
     quartersCapacity *= float(input("Number of Quarters: "))
@@ -79,8 +80,6 @@ def addMoney(coffeeType):
     penniesCapacity *= float(input("Number of Pennies: "))
     totalCapacity = float(quartersCapacity) + float(dimesCapacity) + float(nicklesCapacity) + float(penniesCapacity)
 
-
-    #TODO FIX PROFIT EARNED
     if (coffeeType == "latte"):
         capacityChange = totalCapacity - float(moneyCost)
         if capacityChange <= 0:
@@ -89,6 +88,7 @@ def addMoney(coffeeType):
             profit += 2.5
             print("Distributing " + coffeeType)
             print("Here is your change: " + str(capacityChange))
+            return profit
 
     if (coffeeType == "cappuccino"):
         capacityChange = totalCapacity - float(moneyCost)
@@ -98,6 +98,7 @@ def addMoney(coffeeType):
             profit += 3.0
             print("Distributing " + coffeeType)
             print("Here is your change: " + str(capacityChange))
+            return profit
 
     if (coffeeType == "espresso"):
         capacityChange = totalCapacity - float(moneyCost)
@@ -107,6 +108,7 @@ def addMoney(coffeeType):
             profit += 1.5
             print("Distributing " + coffeeType)
             print("Here is your change: " + str(capacityChange))
+            return profit
 
 
 def reduceResources(coffeeType):
