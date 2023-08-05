@@ -18,9 +18,10 @@
 #                               3.00 $
 
 # Initialize Variables
-profit = 0
 moneyCost = 0
+profit = 0
 totalCapacity = 0
+capacityChange = 0
 coffeeType = "N/A"
 
 # Dictionnary for menu of coffees
@@ -60,29 +61,52 @@ isOn = True
 
 def addMoney(coffeeType):
 
-        moneyCost = float.MENU[coffeeType]['cost'].items()
+    moneyCost = str(MENU[coffeeType]['cost'])
 
-        print("For your " + coffeeType + ", please insert $" + moneyCost)
-        quartersCapacity = input("Number of Quarters: ")
-        dimesCapacity = input("Number of Dimes: ")
-        nicklesCapacity = input("Number of Nickles: ")
-        penniesCapacity = input("Number of Pennies: ")
-        totalCapacity = quartersCapacity + dimesCapacity + nicklesCapacity + penniesCapacity
+    # Reset values
+    quartersCapacity = 0.25
+    dimesCapacity = 0.10
+    nicklesCapacity = 0.05
+    penniesCapacity = 0.01
+    totalCapacity = 0
+    capacityChange = 0
+    profit = 0
+
+    print("For your " + coffeeType + ", please insert $" + moneyCost)
+    quartersCapacity *= float(input("Number of Quarters: "))
+    dimesCapacity *= float(input("Number of Dimes: "))
+    nicklesCapacity *= float(input("Number of Nickles: "))
+    penniesCapacity *= float(input("Number of Pennies: "))
+    totalCapacity = float(quartersCapacity) + float(dimesCapacity) + float(nicklesCapacity) + float(penniesCapacity)
 
 
-    #TODO FIX CHANGE DISTRIBUTION AND PROFIT EARNED
+    #TODO FIX PROFIT EARNED
     if (coffeeType == "latte"):
-        changeCost = totalCapacity - moneyCost
-        if changeCost <= 0:
+        capacityChange = totalCapacity - float(moneyCost)
+        if capacityChange <= 0:
             print("Sorry that's not enough money.")
         else:
+            profit += 2.5
             print("Distributing " + coffeeType)
-            profit += totalCapacity - changeCost
-            print("Here is your change: " + changeCost)
+            print("Here is your change: " + str(capacityChange))
 
     if (coffeeType == "cappuccino"):
+        capacityChange = totalCapacity - float(moneyCost)
+        if capacityChange <= 0:
+            print("Sorry that's not enough money.")
+        else:
+            profit += 3.0
+            print("Distributing " + coffeeType)
+            print("Here is your change: " + str(capacityChange))
 
     if (coffeeType == "espresso"):
+        capacityChange = totalCapacity - float(moneyCost)
+        if capacityChange <= 0:
+            print("Sorry that's not enough money.")
+        else:
+            profit += 1.5
+            print("Distributing " + coffeeType)
+            print("Here is your change: " + str(capacityChange))
 
 
 def reduceResources(coffeeType):
@@ -110,7 +134,7 @@ while isOn:
 
     elif (coffeeType == "report"):
         #TODO Obtain the updated resource list
-        print (f"\nMoney Obtained\nCAD: {profit}$\n")
+        print (f"\nMoney Obtained\nCAD: " + str(profit) + "$\n")
         print ("Resource Capacity")
         print (f"Water left: {resources['water']}ml")
         print (f"Coffee left: {resources['coffee']} g")
