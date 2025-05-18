@@ -33,3 +33,11 @@ print(2 * 3)        # Multiplication
 print(6 / 2)        # Division (float)
 print(6 // 2)       # Division (integer)
 print(2 ** 5)       # Exponetial
+
+## Example 6 (Even/Odd Modulo)
+number_input = int(input("Is this number even or odd: "))
+number_check = number_input % 2
+if number_check == 0:
+    print("\nThis number is even")
+else:
+    print("\nThis number is odd")
