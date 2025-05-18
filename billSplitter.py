@@ -8,7 +8,7 @@ bill_amount = input("Total bill: ")
 tip_amount = input("\nHow much would you like to tip (10%, 15%, 20%, 25%): ")
 number_people = input("\nHow many people will be splitting bill: ")
 
-bill_amount = int(bill_amount)
+bill_amount = float(bill_amount)
 tip_amount = int(tip_amount)
 number_people = int(number_people)
 
