@@ -53,3 +53,20 @@ import random
 # else:
 #     print("Coin is flipped... Tails!")
 
+## Example 8 (High score)
+
+student_scores = [180, 124, 165, 173, 189, 169, 146]
+list_size = range(len(student_scores))
+temp = 0
+i = 0
+
+for i in list_size:
+    if i == 0:
+        temp = student_scores[i]
+        i += 1
+    else:
+        if temp < student_scores[i]:
+            temp = student_scores[i]
+            i += 1
+
+print(f"This is the highest score: {temp}")
