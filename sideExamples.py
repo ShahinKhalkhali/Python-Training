@@ -44,11 +44,12 @@ import random
 # else:
 #     print("\nThis number is odd")
 
-## Example 7 (Random coin flip)
-random_integer = random.randint(1, 10)
-print("Random number is: " + str(random_integer) + "\n")
-coin_toss = random_integer % 2
-if coin_toss == 0:
-    print("Coin is flipped... Heads!")
-else:
-    print("Coin is flipped... Tails!")
+# ## Example 7 (Random coin flip)
+# random_integer = random.randint(1, 10)
+# print("Random number is: " + str(random_integer) + "\n")
+# coin_toss = random_integer % 2
+# if coin_toss == 0:
+#     print("Coin is flipped... Heads!")
+# else:
+#     print("Coin is flipped... Tails!")
+

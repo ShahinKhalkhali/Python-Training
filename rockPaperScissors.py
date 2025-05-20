@@ -38,7 +38,6 @@ CPU_choice = random.randint(0, 2)
 
 # Catch error
 while player_choice < 0 or player_choice > 2:
-    if player_choice < 0 or player_choice > 2:
         player_choice = int(input("\nYou have chosen an invalid number, please type 0 for Rock, 1 for Paper, or 2 for Scissors: "))
 
 print("Your choice:")
