@@ -51,7 +51,7 @@ elif player_choice == 1:
 elif player_choice == 2:
     print(game_images[2])
 
-print("CPU Choice:\n")
+print("CPU Choice:")
 
 if CPU_choice == 0:
     print(game_images[0])
