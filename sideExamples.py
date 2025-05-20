@@ -55,18 +55,24 @@ import random
 
 ## Example 8 (High score)
 
-student_scores = [180, 124, 165, 173, 189, 169, 146]
+student_scores = [180, 124, 165, 173, 189, 169, 146, 199]
 list_size = range(len(student_scores))
-temp = 0
-i = 0
-
+temp1 = 0
+temp2 = 0
+# C++ way
 for i in list_size:
     if i == 0:
-        temp = student_scores[i]
+        temp1 = student_scores[i]
         i += 1
     else:
-        if temp < student_scores[i]:
-            temp = student_scores[i]
+        if temp1 < student_scores[i]:
+            temp1 = student_scores[i]
             i += 1
 
-print(f"This is the highest score: {temp}")
+# Python way
+for i in student_scores:
+    if i > temp2:
+        temp2 = i
+
+print(f"This is the highest score using C++ method: {temp1}")
+print(f"This is the highest score using Python method: {temp2}")
