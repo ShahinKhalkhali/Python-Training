@@ -53,26 +53,42 @@ import random
 # else:
 #     print("Coin is flipped... Tails!")
 
-## Example 8 (High score)
+# ## Example 8 (High score)
 
-student_scores = [180, 124, 165, 173, 189, 169, 146, 199]
-list_size = range(len(student_scores))
-temp1 = 0
-temp2 = 0
-# C++ way
-for i in list_size:
-    if i == 0:
-        temp1 = student_scores[i]
-        i += 1
-    else:
-        if temp1 < student_scores[i]:
-            temp1 = student_scores[i]
-            i += 1
+# student_scores = [180, 124, 165, 173, 189, 169, 146, 199]
+# list_size = range(len(student_scores))
+# temp1 = 0
+# temp2 = 0
+# # Range method
+# for i in list_size:
+#     if i == 0:
+#         temp1 = student_scores[i]
+#         i += 1
+#     else:
+#         if temp1 < student_scores[i]:
+#             temp1 = student_scores[i]
+#             i += 1
 
-# Python way
-for i in student_scores:
-    if i > temp2:
-        temp2 = i
+# # Simple method
+# for i in student_scores:
+#     if i > temp2:
+#         temp2 = i
 
-print(f"This is the highest score using C++ method: {temp1}")
-print(f"This is the highest score using Python method: {temp2}")
+# print(f"This is the highest score using range() method: {temp1}")
+# print(f"This is the highest score using simple method: {temp2}")
+
+## Example 9 (Gauss' Challenge)
+
+list_100 = range(1, 101)
+gauss_100 = 0
+temp = 0
+
+size_list = int((len(list_100))/2)
+
+print(f"list_100 size: {size_list}")
+
+for i in range(size_list):
+    temp = list_100[i] + list_100[-i - 1]
+    gauss_100 += temp
+
+print(f"The Gauss output is: {gauss_100}")
