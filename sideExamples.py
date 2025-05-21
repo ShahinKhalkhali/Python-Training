@@ -93,18 +93,18 @@ import random
 
 # print(f"The Gauss output is: {gauss_100}")
 
-## Example 10 (FizzBuzz)
+# ## Example 10 (FizzBuzz)
 
-word = ["Fizz", "Buzz", "FizzBuzz"]
-numbers = range(1, 101)
+# word = ["Fizz", "Buzz", "FizzBuzz"]
+# numbers = range(1, 101)
 
-for i in numbers:
+# for i in numbers:
 
-    if (i % 3) == 0 and (i % 5) == 0:
-        print(f"{word[2]}")
-    elif (i % 3) == 0:
-        print(f"{word[0]}")
-    elif (i % 5) == 0:
-        print(f"{word[1]}")
-    else:
-        print(f"{i}")
+#     if (i % 3) == 0 and (i % 5) == 0:
+#         print(f"{word[2]}")
+#     elif (i % 3) == 0:
+#         print(f"{word[0]}")
+#     elif (i % 5) == 0:
+#         print(f"{word[1]}")
+#     else:
+#         print(f"{i}")
