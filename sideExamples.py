@@ -77,18 +77,34 @@ import random
 # print(f"This is the highest score using range() method: {temp1}")
 # print(f"This is the highest score using simple method: {temp2}")
 
-## Example 9 (Gauss' Challenge)
+# ## Example 9 (Gauss' Challenge)
 
-list_100 = range(1, 101)
-gauss_100 = 0
-temp = 0
+# list_100 = range(1, 101)
+# gauss_100 = 0
+# temp = 0
 
-size_list = int((len(list_100))/2)
+# size_list = int((len(list_100))/2)
 
-print(f"list_100 size: {size_list}")
+# print(f"list_100 size: {size_list}")
 
-for i in range(size_list):
-    temp = list_100[i] + list_100[-i - 1]
-    gauss_100 += temp
+# for i in range(size_list):
+#     temp = list_100[i] + list_100[-i - 1]
+#     gauss_100 += temp
 
-print(f"The Gauss output is: {gauss_100}")
+# print(f"The Gauss output is: {gauss_100}")
+
+## Example 10 (FizzBuzz)
+
+word = ["Fizz", "Buzz", "FizzBuzz"]
+numbers = range(1, 101)
+
+for i in numbers:
+
+    if (i % 3) == 0 and (i % 5) == 0:
+        print(f"{word[2]}")
+    elif (i % 3) == 0:
+        print(f"{word[0]}")
+    elif (i % 5) == 0:
+        print(f"{word[1]}")
+    else:
+        print(f"{i}")
