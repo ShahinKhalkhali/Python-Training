@@ -12,6 +12,7 @@ word_list = ["Adieu", "Ghost", "Train", "Words", "Blame", "Topaz", "Traitorous",
 word_letters = []
 guess_display = []
 wrong_guesses = 0
+flag = False
 
 chosen_word = random.choice(word_list)
 word_length = range(len(chosen_word))
@@ -31,8 +32,11 @@ while wrong_guesses <= 5:
     for i in word_length:
         print(f"Letter {i}: {word_letters[i]}")
         if user_choice == word_letters[i]:
+            flag = True
             guess_display[i] = word_letters[i]
             print(f"guess_display: {guess_display}")
-            break
-        else:
-            wrong_guesses = wrong_guesses + 1
+            
+    if flag == False:
+        wrong_guesses = wrong_guesses + 1
+        # TODO Draw the hangman
+    flag = False
