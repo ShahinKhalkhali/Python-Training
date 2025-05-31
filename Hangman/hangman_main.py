@@ -9,7 +9,6 @@ import hangman_art as T
 print("Welcome to Hangman")
 
 from hangman_words import word_list
-from hangman_art import tree
 
 word_letters = []
 guess_display = []
