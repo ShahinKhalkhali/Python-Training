@@ -108,3 +108,13 @@ import random
 #         print(f"{word[1]}")
 #     else:
 #         print(f"{i}")
+
+# ## Exmaple 11 (Function & Inputs)
+# Hello = input("Your name: ")
+# def greet(Hello):
+#     Greetings = "Hello World."
+#     print(f"{Greetings}")
+#     print("\nHello World.")
+#     print(f"\nHello {Hello}.")
+
+# greet(Hello)
