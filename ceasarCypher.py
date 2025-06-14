@@ -69,7 +69,7 @@ def caesar(direction, original_text, shift_amount):
     elif direction.lower() == "decrypt":
         decrypt(original_text, shift_amount)
     else:
-        print("Please choose to either 'Encrypt' or 'Decrypt'.")
+        direction = input("Please choose to either 'Encrypt' or 'Decrypt': ")
         caesar(direction, original_text, shift_amount)
 
 chars_text = list(text) # Transforming text into a list of characters
