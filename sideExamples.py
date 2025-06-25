@@ -6,6 +6,7 @@
 import random
 
 # ## Example 1 (Printing)
+
 # # Outputting
 # print ("Day 1 - Python Print Function\nThe function is declared like this\nprint('what to print')\n") # New line
 # print ("Hello" + " " + "World") # Concatenation
@@ -14,11 +15,17 @@ import random
 # x = input ("Write your name: ") # print instruction and ask user to input string
 # print ("You Entered: ", x)
 
+#------------------------------------------------------#
+
 # ## Example 2 (f-strings)
+
 # days = 365
 # print (f"There are {days} in a year")
 
+#------------------------------------------------------#
+
 # ## Example 3 (Type check)
+
 # integer = 123
 # string = "abc"
 # floating = 123.456
@@ -28,7 +35,10 @@ import random
 # ## Example 4 (Fix w/ type casting)
 # print("Number of letters in your name: " + str(int(len(input("Enter your name: ")))))
 
+#------------------------------------------------------#
+
 # ## Example 5 (Types of operators --> PEMDAS)
+
 # print("123")        # Concatenation
 # print(123 + 456)    # Addition
 # print(2 * 3)        # Multiplication
@@ -36,7 +46,10 @@ import random
 # print(6 // 2)       # Division (integer)
 # print(2 ** 5)       # Exponetial
 
+#------------------------------------------------------#
+
 # ## Example 6 (Even/Odd Modulo)
+
 # number_input = int(input("Is this number even or odd: "))
 # number_check = number_input % 2
 # if number_check == 0:
@@ -44,7 +57,10 @@ import random
 # else:
 #     print("\nThis number is odd")
 
+#------------------------------------------------------#
+
 # ## Example 7 (Random coin flip)
+
 # random_integer = random.randint(1, 10)
 # print("Random number is: " + str(random_integer) + "\n")
 # coin_toss = random_integer % 2
@@ -52,6 +68,8 @@ import random
 #     print("Coin is flipped... Heads!")
 # else:
 #     print("Coin is flipped... Tails!")
+
+#------------------------------------------------------#
 
 # ## Example 8 (High score)
 
@@ -77,6 +95,8 @@ import random
 # print(f"This is the highest score using range() method: {temp1}")
 # print(f"This is the highest score using simple method: {temp2}")
 
+#------------------------------------------------------#
+
 # ## Example 9 (Gauss' Challenge)
 
 # list_100 = range(1, 101)
@@ -92,6 +112,8 @@ import random
 #     gauss_100 += temp
 
 # print(f"The Gauss output is: {gauss_100}")
+
+#------------------------------------------------------#
 
 # ## Example 10 (FizzBuzz)
 
@@ -109,7 +131,10 @@ import random
 #     else:
 #         print(f"{i}")
 
+#------------------------------------------------------#
+
 # ## Exmaple 11 (Function & Inputs)
+
 # Hello = input("Your name: ")
 # def greet(Hello):
 #     Greetings = "Hello World."
@@ -118,3 +143,67 @@ import random
 #     print(f"\nHello {Hello}.")
 
 # greet(Hello)
+
+#------------------------------------------------------#
+
+# ## Example 12 (Dictionary introduction)
+
+# student_scores = {
+#     'Harry': 88,
+#     'Ron': 78,
+#     'Hermione': 95,
+#     'Draco': 75,
+#     'Neville': 60
+# }
+
+# student_grades = {
+    
+# }
+
+# for key in student_scores:
+    
+#     student_grades[key] = student_scores[key]
+    
+#     if student_scores[key] >= 91:
+#         student_grades[key] = "Outstanding"
+#     elif student_scores[key] >= 81:
+#         student_grades[key] = "Exceeds Expectations"
+#     elif student_scores[key] >= 71:
+#         student_grades[key] = "Acceptable"
+#     elif student_scores[key] < 71:
+#         student_grades[key] = "Fail"
+
+#     print(f"{key} -----> {student_grades[key]}")
+
+# print(student_grades)
+
+#------------------------------------------------------#
+
+# ## Example 13 (Dictionary indexing)
+
+# travel_log = {
+#     "France": ["Paris", "Lille", "Dijon"],
+#     "Germany": ["Stuttgart", "Berlin", "Hamburg"]
+# }
+
+# print(travel_log["France"][1])
+
+#------------------------------------------------------#
+
+## Example 14 (Dictionary nested indexing)
+
+# nested_list = ["A", "B", ["C", "D"]]
+# print(nested_list[2][1])
+
+# travel_log = {
+#     "France": {
+#         "cities_visited" : ["Paris", "Lille", "Dijon"],
+#         "total_visits" : 12
+#     },
+#     "Germany": {
+#         "cities_visited" : ["Stuttgart", "Berlin", "Hamburg"],
+#         "total_visits" : 5
+#     }
+# }
+
+# print(travel_log["Germany"]["cities_visited"][2])
