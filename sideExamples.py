@@ -193,7 +193,7 @@ import random
 ## Example 14 (Dictionary nested indexing)
 
 # nested_list = ["A", "B", ["C", "D"]]
-# print(nested_list[2][1])
+# print(nested_list[2][1]) # Accesses "D"
 
 # travel_log = {
 #     "France": {
@@ -206,4 +206,4 @@ import random
 #     }
 # }
 
-# print(travel_log["Germany"]["cities_visited"][2])
+# print(travel_log["Germany"]["cities_visited"][2]) # Accesses "Hamburg"
