@@ -40,7 +40,7 @@ def main(auctionDict):
             exit()
 
         else:
-            flag = input("Please input either 'yes' or 'no'\n")
-            main()
+            print("Please input either 'yes' or 'no'\n")
+            main(auctionDict)
 
 main(auctionDict)
