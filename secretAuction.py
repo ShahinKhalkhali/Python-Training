@@ -5,14 +5,13 @@
 import os
 
 auctionDict = {}
-nameDict = []
-bidDict = []
 
-def sortBids():
+def sortBids(auctionDict):
 
     highestBid = 0
 
-    for name, bid in auctionDict.items():
+    for name in auctionDict:
+        bid = auctionDict[name]
         if bid > highestBid:
             highestBid = bid
             winner = name
@@ -37,7 +36,7 @@ def main(auctionDict):
             auctionDict[name] = bid
 
         elif flag == "no":
-            sortBids()
+            sortBids(auctionDict)
             exit()
 
         else:
