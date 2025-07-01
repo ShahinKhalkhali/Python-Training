@@ -1,7 +1,9 @@
+print('''
 ############################################################
 ###############       PYTHON TRAINING        ###############
 ###############         By SHAHIN K.         ###############
 ############################################################
+''')
 
 import random
 
@@ -190,7 +192,7 @@ import random
 
 #------------------------------------------------------#
 
-## Example 14 (Dictionary nested indexing)
+# ## Example 14 (Dictionary nested indexing)
 
 # nested_list = ["A", "B", ["C", "D"]]
 # print(nested_list[2][1]) # Accesses "D"
@@ -207,3 +209,58 @@ import random
 # }
 
 # print(travel_log["Germany"]["cities_visited"][2]) # Accesses "Hamburg"
+
+# ## Exmaple 15 (Functions w/ outputs)
+
+# def format_name(surname, name):
+    
+#     """Capitalizes the first and last name of the users' input.
+
+#     Args:
+#         surname (string): First name
+#         name (string): Last name
+
+#     Returns:
+#         string: Concatenated first name and last name
+#     """
+
+#     f_name = surname.title()
+#     l_name = name.title()
+#     return f"Surname: {f_name}\nName: {l_name}"
+
+# def concatenate(input):
+#     """Lists the input twice
+
+#     Args:
+#         input (string): Output of the format_name(surname, name) function.
+
+#     Returns:
+#         string: Display's the input twice.
+#     """
+#     return input + "\n" + input
+
+# output = concatenate(format_name("sHahIN", "kHALKhali"))
+# print(output)
+
+# ## Example 16 (Leap year)
+
+# def is_leap_year(year):
+#     """Lets user know if the year inputted is a leap year or not.
+
+#     Args:
+#         year (int): User's year input
+
+#     Returns:
+#         bool: Returns True for "Leap" or False for "Not Leap"
+#     """
+#     if ((year % 4) == 0):
+#         if ((year % 100) != 0):
+#             return True
+#         elif ((year % 400) == 0):
+#             return True
+#         else:
+#             return False
+#     else:
+#         return False
+
+# print(is_leap_year(2024))
