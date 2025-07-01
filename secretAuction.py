@@ -27,7 +27,7 @@ auctionDict[name] = bid
 def main(auctionDict):
     flag = True
     while flag == True:
-        flag = input("Are there any other bidders? Type 'yes' or 'no'.\n")
+        flag = input("Are there any other bidders? Type 'yes' or 'no'.\n").lower()
 
         if flag == "yes":
             os.system('cls')
