@@ -1,6 +1,8 @@
+print('''
 ###################################################
 ###############      HANGMAN        ###############
 ###################################################
+''')
 
 import random # Imports entire random module
 import hangman_art as T # Imports entire hangman_art module with alias T to call particular function
