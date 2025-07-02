@@ -242,25 +242,25 @@ import random
 # output = concatenate(format_name("sHahIN", "kHALKhali"))
 # print(output)
 
-# ## Example 16 (Leap year)
+## Example 16 (Leap year)
 
-# def is_leap_year(year):
-#     """Lets user know if the year inputted is a leap year or not.
+def is_leap_year(year):
+    """Lets user know if the year inputted is a leap year or not.
 
-#     Args:
-#         year (int): User's year input
+    Args:
+        year (int): User's year input
 
-#     Returns:
-#         bool: Returns True for "Leap" or False for "Not Leap"
-#     """
-#     if ((year % 4) == 0):
-#         if ((year % 100) != 0):
-#             return True
-#         elif ((year % 400) == 0):
-#             return True
-#         else:
-#             return False
-#     else:
-#         return False
+    Returns:
+        bool: Returns True for "Leap" or False for "Not Leap"
+    """
+    if ((year % 4) == 0):
+        if ((year % 100) != 0):
+            return True
+        elif ((year % 400) == 0):
+            return True
+        else:
+            return False
+    else:
+        return False
 
-# print(is_leap_year(2024))
+print(is_leap_year(2024))

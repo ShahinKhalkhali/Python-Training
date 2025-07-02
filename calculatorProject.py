@@ -4,6 +4,8 @@ print('''
 #############################################################
 ''')
 
+import os
+
 def add(n1, n2):
     return n1 + n2
 
@@ -27,4 +29,39 @@ calculatorDict = {
 
 # TODO: Create calculator
 
-print()
+def main():
+
+    # TODO: Add docString
+
+    initialNumber = int(input("What's the first number?: "))
+
+    flag = True
+
+    while flag == True:
+
+        for key in calculatorDict:
+            print(key)
+
+        operator = input("Pick an operation: ")
+
+        nextNumber = int(input("What's the next number?: "))
+        output = calculatorDict[operator](initialNumber, nextNumber)
+        print(f"{initialNumber} {operator} {nextNumber} = {output}")
+        
+        choice = input(f"\nType 'y' to continue calculating with {output}, or Type 'n' to start a new calculation: ")
+
+        if choice == "y".lower():
+            print(f"\n------ Previous Value: {output} ------ \n")
+            flag = True
+            initialNumber = output
+
+        else:
+            os.system('cls')
+            print('''
+#############################################################
+###############      CALCULATOR PROJECT        ##############
+#############################################################
+''')
+            main()
+
+main()
