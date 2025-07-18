@@ -15,7 +15,14 @@ computer_hand = [random.choice(cards)]
 player_hand_sum = sum(player_hand)
 computer_hand_sum = sum(computer_hand)
 
-def hit_stand_function(player_hand, player_hand_sum):
+def hit_stand_function(player_hand, player_hand_sum, computer_hand, computer_hand_sum):
+
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
+
     hit_stand = input("Type 'H' to Hit or 'S' to Stand: ")
     if hit_stand.lower() == 'h':
         print("\nHit!")
@@ -45,9 +52,11 @@ def hit_stand_function(player_hand, player_hand_sum):
         play_again(player_hand_sum, computer_hand_sum)
     else:
         print("\nPlease insert a valid input.")
-        hit_stand_function()
+        print_score(player_hand, computer_hand, player_hand_sum, computer_hand_sum)
+        hit_stand_function(player_hand, player_hand_sum, computer_hand, computer_hand_sum)
 
 def computer_function(player_hand, computer_hand, player_hand_sum, computer_hand_sum):
+    print("\n-------------- Computer's Turn --------------\n")
     flag = True
     while flag == True:
         print_score(player_hand, computer_hand, player_hand_sum, computer_hand_sum)
@@ -68,14 +77,18 @@ def computer_function(player_hand, computer_hand, player_hand_sum, computer_hand
 
 def play_again(player_hand_sum, computer_hand_sum):
     win_condition(player_hand_sum, computer_hand_sum)
-    replay = input("\nDo you want to play another game of Blackjack? Type 'Y' or 'N': ")
-    if replay.lower() == 'y':
-        player_hand = [random.choice(cards), random.choice(cards)]
-        computer_hand = [random.choice(cards)]
-        player_hand_sum = sum(player_hand)
-        main(player_hand, computer_hand, player_hand_sum, computer_hand_sum)
-    else:
-        exit()
+    while True:
+        replay = input("\nDo you want to play another game of Blackjack? Type 'Y' or 'N': ")
+        if replay.lower() == 'y':
+            player_hand = [random.choice(cards), random.choice(cards)]
+            computer_hand = [random.choice(cards)]
+            player_hand_sum = sum(player_hand)
+            computer_hand_sum = sum(computer_hand)
+            main(player_hand, computer_hand, player_hand_sum, computer_hand_sum)
+        elif replay.lower() == 'n':
+            exit()
+        else:
+            print("\nPlease enter a valid input.")
 
 def print_score(player_hand, computer_hand, player_hand_sum, computer_hand_sum):
     print(f"\nYour cards: {player_hand}, current score: {player_hand_sum}")
@@ -94,7 +107,8 @@ def win_condition(player_hand_sum, computer_hand_sum):
         print(f"\nDealer bust with {computer_hand_sum}, Congrats you win with {player_hand_sum}")
 
 def main(player_hand, computer_hand, player_hand_sum, computer_hand_sum):
-    print(f"\nYour cards: {player_hand}, current score: {player_hand_sum}")
+    print("\n-------------- Player's Turn --------------\n")
+    print(f"Your cards: {player_hand}, current score: {player_hand_sum}")
     print(f"Computer's first card: {computer_hand}")
     flag = True
     while flag == True:
@@ -102,6 +116,6 @@ def main(player_hand, computer_hand, player_hand_sum, computer_hand_sum):
             print(f"\nYou got Black Jack!")
             computer_function(player_hand, computer_hand, player_hand_sum, computer_hand_sum)
             play_again(player_hand_sum, computer_hand_sum)
-        hit_stand_function(player_hand, player_hand_sum)
+        hit_stand_function(player_hand, player_hand_sum, computer_hand, computer_hand_sum)
 
 main(player_hand, computer_hand, player_hand_sum, computer_hand_sum)
