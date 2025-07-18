@@ -35,7 +35,6 @@ def hit_stand_function(player_hand, player_hand_sum):
             player_hand_sum = sum(player_hand)
             print_score(player_hand, computer_hand, player_hand_sum, computer_hand_sum)
             print(f"\nBust, your score is {player_hand_sum}! Better luck next time :(")
-            computer_function(player_hand, computer_hand, player_hand_sum, computer_hand_sum)
             play_again(player_hand_sum, computer_hand_sum)
 
         elif player_hand_sum < 21:
@@ -48,6 +47,7 @@ def hit_stand_function(player_hand, player_hand_sum):
         
     elif hit_stand.lower() == 's':
         print("\nStand!")
+        player_hand_sum = sum(player_hand)
         computer_function(player_hand, computer_hand, player_hand_sum, computer_hand_sum)
         play_again(player_hand_sum, computer_hand_sum)
 
@@ -104,6 +104,8 @@ def win_condition(player_hand_sum, computer_hand_sum):
         print(f"\nPlayer Wins with {player_hand_sum}! Congratulations :D")
     elif player_hand_sum == computer_hand_sum:
         print(f"\nDraw, both player & dealer {player_hand_sum} == {computer_hand_sum}")
+    elif player_hand_sum > 21:
+        return
     else:
         print(f"\nDealer bust with {computer_hand_sum}, Congrats you win with {player_hand_sum}")
 
