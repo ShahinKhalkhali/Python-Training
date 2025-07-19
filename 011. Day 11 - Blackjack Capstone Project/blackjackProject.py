@@ -17,10 +17,18 @@ computer_hand_sum = sum(computer_hand)
 
 def hit_stand_function(player_hand, player_hand_sum, computer_hand, computer_hand_sum):
 
-    """_summary_
+    """Determines the player's choice.
+
+    Args:
+        player_hand (list): List of player cards.
+        computer_hand (list): List of  dealer cards.
+        player_hand_sum (int): Total value of player's hand.
+        computer_hand_sum (int): Total value in dealer's hand.
 
     Returns:
-        _type_: _description_
+        tuple: A tuple containing:
+        - list: Updated player hand.
+        - int: Updated total sum of player's hand.
     """
 
     hit_stand = input("Type 'H' to Hit or 'S' to Stand: ")
@@ -96,15 +104,15 @@ def print_score(player_hand, computer_hand, player_hand_sum, computer_hand_sum):
 
 def win_condition(player_hand_sum, computer_hand_sum):
     if player_hand_sum < 22 and computer_hand_sum < 22 and computer_hand_sum > player_hand_sum:
-        print(f"\nComputer Wins with {computer_hand_sum}! Better luck next time :(")
+        print(f"\nComputer Wins with {computer_hand_sum}! Better luck next time... :(")
     elif player_hand_sum < 22 and computer_hand_sum < 22 and computer_hand_sum < player_hand_sum:
-        print(f"\nPlayer Wins with {player_hand_sum}! Congratulations :D")
+        print(f"\nPlayer Wins with {player_hand_sum}! Congratulations! :D")
     elif player_hand_sum == computer_hand_sum:
         print(f"\nDraw, both player & dealer {player_hand_sum} == {computer_hand_sum}")
     elif player_hand_sum > 21:
         return
     else:
-        print(f"\nDealer bust with {computer_hand_sum}, Congrats you win with {player_hand_sum}")
+        print(f"\nDealer bust with {computer_hand_sum}, Congrats you win with {player_hand_sum}! :D")
 
 def main(player_hand, computer_hand, player_hand_sum, computer_hand_sum):
     print("\n-------------- Player's Turn --------------\n")
