@@ -210,6 +210,8 @@ import random
 
 # print(travel_log["Germany"]["cities_visited"][2]) # Accesses "Hamburg"
 
+#------------------------------------------------------#
+
 # ## Exmaple 15 (Functions w/ outputs)
 
 # def format_name(surname, name):
@@ -242,25 +244,45 @@ import random
 # output = concatenate(format_name("sHahIN", "kHALKhali"))
 # print(output)
 
-## Example 16 (Leap year)
+#------------------------------------------------------#
 
-def is_leap_year(year):
-    """Lets user know if the year inputted is a leap year or not.
+# ## Example 16 (Leap year)
 
-    Args:
-        year (int): User's year input
+# def is_leap_year(year):
+#     """Lets user know if the year inputted is a leap year or not.
 
-    Returns:
-        bool: Returns True for "Leap" or False for "Not Leap"
-    """
-    if ((year % 4) == 0):
-        if ((year % 100) != 0):
-            return True
-        elif ((year % 400) == 0):
-            return True
-        else:
-            return False
-    else:
-        return False
+#     Args:
+#         year (int): User's year input
 
-print(is_leap_year(2024))
+#     Returns:
+#         bool: Returns True for "Leap" or False for "Not Leap"
+#     """
+#     if ((year % 4) == 0):
+#         if ((year % 100) != 0):
+#             return True
+#         elif ((year % 400) == 0):
+#             return True
+#         else:
+#             return False
+#     else:
+#         return False
+
+# print(is_leap_year(2024))
+
+#------------------------------------------------------#
+
+## Example 17 (Prime Number)
+def is_prime(num):
+
+    div_counter = 0
+
+    for i in range(num):
+        if (num % (i+1)) == 0:
+            div_counter += 1
+            if div_counter > 2:
+                return print(False)
+
+    return print(True)
+
+num = int(input("Enter a number to check if it is prime or not: "))
+is_prime(num)
