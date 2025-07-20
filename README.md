@@ -526,7 +526,7 @@ choice(list)
 ### Creating a Python Class
 You create a class using the class keyword.
 Note, class names in Python are PascalCased.
-So to create an empty class 👉
+So to create an empty class
 ```
 class MyClass:
     #define class
